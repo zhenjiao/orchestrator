@@ -2,11 +2,9 @@ FROM ubuntu
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		gcc \
-		build-essential \
-        git
-COPY . /usr/src/orchestrator
-RUN cd /usr/src/orchestrator
-RUN gcc hello.cpp -o hello
-RUN find \( -name 'hello' \) -exec file '{}' + -exec ls -lh '{}' +
+		build-essential 
+COPY ./* /usr/src/orchestrator
+WORKDIR /usr/src/orchestrator
+RUN gcc main.cpp -o test
 
-CMD ["./hello"]
+CMD ["./test"]
