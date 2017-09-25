@@ -2,7 +2,11 @@
 
 int main()
 {
-    printf("Hello world");
+    while(true)
+    {
+        printf("Hello world\n");
+        sleep(1000);
+    }
 
     return 0;
 }
